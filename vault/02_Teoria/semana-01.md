@@ -1,7 +1,7 @@
 ---
 semana: 1
 tema: Variables y tipos de datos
-estado: pendiente
+estado: en-progreso
 ---
 
 # Semana 1 — ¿Qué es programar? Variables y tipos de datos
@@ -61,35 +61,157 @@ int edad = 25;
 
 Esto le dice a Java: "crea una caja llamada `edad`, que guarda un número entero, y pon `25` adentro".
 
-### Los tipos de datos más comunes
+---
+
+## Tipos de datos — ¿por qué existen?
+
+La computadora necesita saber QUÉ tipo de cosa estás guardando. No es lo mismo guardar el número `25` que guardar el texto `"25"`. Son cosas distintas para Java.
+
+### Los tipos principales
 
 | Tipo | Qué guarda | Ejemplo |
 |------|-----------|---------|
 | `int` | Número entero (sin decimales) | `int meses = 12;` |
 | `double` | Número con decimales | `double precio = 99.50;` |
-| `String` | Texto (siempre entre comillas) | `String nombre = "Jess";` |
+| `String` | Texto | `String nombre = "Jess";` |
 | `boolean` | Solo `true` o `false` | `boolean activo = true;` |
 
-### Reglas para nombrar variables
+---
 
-- Solo letras, números y guion bajo
-- No pueden empezar con número
-- Sin espacios ni acentos
-- Usa nombres descriptivos: `precioTotal` en lugar de `p`
+## Por qué String usa comillas y los números no
+
+Esta es una de las preguntas más importantes de esta semana.
+
+Cuando escribes:
+```java
+int edad = 25;
+```
+El `25` es un **número de verdad**. La computadora lo trata como valor matemático. Con él puedes sumar, restar, multiplicar.
+
+Cuando escribes:
+```java
+String nombre = "Jess";
+```
+Las comillas le dicen a Java: *"todo lo que está entre estas comillas es texto, no lo trates como número ni como instrucción"*.
+
+**¿Por qué importa?**
+
+Mira qué pasa si quitas las comillas:
+```java
+String nombre = Jess;   // ERROR — Java busca una variable llamada Jess que no existe
+```
+
+Y si pones un número entre comillas:
+```java
+String cosa = "25";     // esto es el TEXTO "25", no el número 25
+int numero = 25;        // esto es el NÚMERO 25
+
+// No puedes sumarlos directamente porque son tipos distintos
+```
+
+**Regla simple:** Si es texto que quieres mostrar o guardar como palabras → va entre comillas. Si es un número con el que vas a hacer cálculos → sin comillas.
 
 ---
 
 ## Imprimir en pantalla
 
-```java
-System.out.println("Hola Mundo");   // imprime con salto de línea al final
-System.out.print("Sin salto");      // imprime sin salto de línea
+Java tiene dos maneras de mostrar cosas:
 
-// Puedes mezclar texto y variables con +
+```java
+System.out.print("Hola");    // imprime el texto y el cursor queda al final, en la misma línea
+System.out.println("Hola");  // imprime el texto y baja a la siguiente línea
+```
+
+### ¿Qué es un "salto de línea"?
+
+Cuando presionas **Enter** en Word o en cualquier editor, el texto sigue en la línea de abajo. Eso se llama **salto de línea**.
+
+En la pantalla de la computadora pasa lo mismo. `println` hace ese "Enter" automáticamente al terminar. `print` no lo hace.
+
+**Ejemplo para verlo claro:**
+
+```java
+System.out.print("Uno");
+System.out.print("Dos");
+System.out.print("Tres");
+```
+
+Resultado en pantalla:
+```
+UnoDosTres
+```
+
+Todo junto en la misma línea porque `print` no baja.
+
+```java
+System.out.println("Uno");
+System.out.println("Dos");
+System.out.println("Tres");
+```
+
+Resultado en pantalla:
+```
+Uno
+Dos
+Tres
+```
+
+Cada uno en su propia línea porque `println` baja después de imprimir.
+
+---
+
+### El carácter especial `\n`
+
+Hay una tercera opción: puedes poner el salto de línea TÚ MISMO dentro del texto, usando `\n`.
+
+`\n` es una instrucción que significa literalmente "baja de línea aquí". Las dos letras juntas (`\` y `n`) son un código especial que Java entiende como salto.
+
+```java
+System.out.print("Uno\nDos\nTres");
+```
+
+Resultado en pantalla:
+```
+Uno
+Dos
+Tres
+```
+
+**¿Cuándo usas `\n` y cuándo `println`?**
+
+Usa `println` cuando cada cosa que imprimes va en su propia línea.
+
+Usa `\n` cuando quieres controlar exactamente dónde va cada salto dentro de un mismo texto largo:
+
+```java
+System.out.println("Nombre: Jess\nEdad: 22\nCiudad: Guadalajara");
+```
+
+Resultado:
+```
+Nombre: Jess
+Edad: 22
+Ciudad: Guadalajara
+```
+
+---
+
+## Mezclar texto y variables al imprimir
+
+Puedes combinar texto fijo con el valor de una variable usando `+`:
+
+```java
 String nombre = "Jess";
 int edad = 22;
 System.out.println("Me llamo " + nombre + " y tengo " + edad + " años.");
 ```
+
+Resultado:
+```
+Me llamo Jess y tengo 22 años.
+```
+
+El `+` aquí no es suma matemática — es "pegar" texto con variables.
 
 ---
 
@@ -102,28 +224,44 @@ int b = 3;
 System.out.println(a + b);  // Suma: 13
 System.out.println(a - b);  // Resta: 7
 System.out.println(a * b);  // Multiplicación: 30
-System.out.println(a / b);  // División: 3 (¡ojo! solo da enteros)
-System.out.println(a % b);  // Residuo: 1
+System.out.println(a / b);  // División: 3  (¡ojo! solo da entero porque ambos son int)
+System.out.println(a % b);  // Residuo: 1   (lo que sobra de dividir 10 entre 3)
 ```
 
-> Si necesitas decimales en la división, usa `double`: `double resultado = 10.0 / 3;`
+> Si necesitas decimales en la división, usa `double`:
+> ```java
+> double resultado = 10.0 / 3;   // resultado = 3.333...
+> ```
 
 ---
 
-## Errores frecuentes (no te asustes, pasan siempre)
+## Reglas para nombrar variables
 
-- **Olvidar el `;`** al final de cada línea — Java lo necesita
-- **El texto sin comillas:** `"Jess"` no es lo mismo que `Jess` (sin comillas da error)
-- **El nombre del archivo no coincide con el nombre de la clase** — deben ser iguales
+- Solo letras, números y guion bajo
+- No pueden empezar con número (`1edad` da error, `edad1` sí está bien)
+- Sin espacios (`mi edad` da error, `miEdad` sí está bien)
+- Sin acentos ni ñ (`número` puede causar problemas, usa `numero`)
+- Usa nombres descriptivos: `precioTotal` en lugar de `p`
 
 ---
 
-## A recordar esta semana
+## Errores frecuentes (no te asustes, le pasan a todos)
 
-- Todo programa Java tiene un método `main` — es donde empieza todo
-- Las variables guardan valores que usas en el programa
-- `System.out.println()` muestra cosas en pantalla
-- Cada tipo de dato tiene su propósito: `int` para enteros, `double` para decimales, `String` para texto
+- **Olvidar el `;`** al final de cada línea — Java lo necesita en casi todas las líneas
+- **El texto sin comillas:** `"Jess"` no es lo mismo que `Jess`. Sin comillas Java cree que es el nombre de una variable
+- **El nombre del archivo no coincide con el nombre de la clase** — deben ser exactamente iguales
+- **Usar `=` para comparar** — en Java `=` asigna un valor. Para comparar se usa `==`
+
+---
+
+## Resumen de la semana
+
+- Un programa es una lista de instrucciones paso a paso
+- Las variables son cajas con nombre donde guardas valores
+- `int` es para números enteros, `double` para decimales, `String` para texto, `boolean` para verdadero/falso
+- Los `String` van entre comillas porque son texto — los números no llevan comillas porque son valores matemáticos
+- `println` imprime y baja a la siguiente línea; `print` imprime sin bajar
+- `\n` dentro de un texto es un salto de línea manual
 
 ---
 
