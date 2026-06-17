@@ -86,15 +86,15 @@ _Tu respuesta:_
 
 **¿Qué fue lo más difícil o confuso?**
 
-_Tu respuesta:_
+_Tu respuesta:_ Tener la incertidumbre de saber si estaba entendiendo bien lo que se me pedía 
 
 **¿Tuviste algún error que no supiste resolver? ¿Cuál fue?**
 
-_Tu respuesta:_
+_Tu respuesta:_ No
 
 **¿Cómo te sentiste al ver que el programa corrió?**
 
-_Tu respuesta:_
+_Tu respuesta:_ Sentí que me faltaba entender algo o los ejercicios aun no tiene complejidad
 
 ---
 
