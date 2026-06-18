@@ -36,6 +36,44 @@ Estatura: 1.63 m
 
 _Tu respuesta:_
 
+public class MiPresentacion {
+
+     public static void main(String[] args) throws Exception {
+
+  
+
+        //Imprime resultado
+
+        String nombre = "Jessica";
+
+        int edad = 35;
+
+        String ciudad =  "CDMX";
+
+        double estatuta = 1.60 ;
+
+  
+
+        // Imprime resultado
+
+        System.out.println(" === Mi presentación ===");
+
+        System.out.println("Nombre: " + nombre + ".");
+
+        System.out.println("Edad: " + edad + ".");
+
+        System.out.println("Ciudad: " + ciudad + ".");
+
+        System.out.println("Estatura: " + estatuta + "m.");
+
+  
+
+    }
+
+  
+
+}
+
 ---
 
 ## Ejercicio 2 — Precio de manzanas (obligatorio)
@@ -53,7 +91,31 @@ Usa variables para el precio por kg, los kilogramos y el total.
 **Escribe aquí tu código:**
 
 _Tu respuesta:_
+public class PrecioManzanas {
 
+    public static void main(String[] args) throws Exception {
+
+  
+
+        //variables
+
+        int precio = 35;
+
+        int kg = 3;
+
+        double total = precio * kg ;
+
+  
+
+        //Imprime resultado
+
+        System.out.println("Total a pagar: $" + total);
+
+    }
+
+  
+
+}
 ---
 
 ## Ejercicio 3 — Convertidor de temperatura (reto opcional)
@@ -73,7 +135,27 @@ Haz un programa que:
 **Escribe aquí tu código:**
 
 _Tu respuesta:_
+public class ConvertidorTemperatura {
 
+    public static void main(String[] args) throws Exception {
+
+        //fahrenheit = (celsius × 9 / 5) + 32
+
+        //Variables
+
+        double celcius = 37;
+
+        double fahrenheit = ( (celcius * 9 ) / 5 ) + 32;
+
+        //Imprime resultado - Imprima el resultado como: `37.0 °C = 98.6 °F`
+
+        System.out.println(celcius + "°C = " + fahrenheit + "°F" );
+
+    }
+
+  
+
+}
 ---
 
 ## Reflexión (importante — no saltes esta parte)

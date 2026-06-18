@@ -33,11 +33,11 @@ public class Saludo {
 
 ### Tipos de lectura con Scanner
 
-| Método | Lee | Ejemplo de uso |
-|--------|-----|----------------|
-| `nextLine()` | Texto completo (una línea) | Nombres, mensajes |
-| `nextInt()` | Número entero | Edad, cantidad |
-| `nextDouble()` | Número con decimales | Precio, peso |
+| Método         | Lee                        | Ejemplo de uso    |
+| -------------- | -------------------------- | ----------------- |
+| `nextLine()`   | Texto completo (una línea) | Nombres, mensajes |
+| `nextInt()`    | Número entero              | Edad, cantidad    |
+| `nextDouble()` | Número con decimales       | Precio, peso      |
 
 **Importante:** `import java.util.Scanner;` siempre va en la primera línea (antes de `public class`).
 
@@ -81,11 +81,11 @@ Los usarás mucho la semana que viene con los `if`.
 
 ## Operadores lógicos (combinar condiciones)
 
-| Operador | Símbolo | Ejemplo | Cuándo es true |
-|----------|---------|---------|----------------|
-| Y | `&&` | `edad >= 18 && tieneID` | Cuando AMBAS son true |
-| O | `\|\|` | `dia == 6 \|\| dia == 7` | Cuando AL MENOS UNA es true |
-| No | `!` | `!activo` | Cuando la original es false |
+| Operador | Símbolo | Ejemplo                  | Cuándo es true              |
+| -------- | ------- | ------------------------ | --------------------------- |
+| Y        | `&&`    | `edad >= 18 && tieneID`  | Cuando AMBAS son true       |
+| O        | `\|\|`  | `dia == 6 \|\| dia == 7` | Cuando AL MENOS UNA es true |
+| No       | `!`     | `!activo`                | Cuando la original es false |
 
 ---
 
