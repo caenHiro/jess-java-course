@@ -18,7 +18,8 @@ Archivo: `codigo/semana-02/Calculadora.java`
 El programa debe:
 1. Pedir al usuario dos números (pueden tener decimales)
 2. Calcular e imprimir: suma, resta, multiplicación y división
-3. Si el segundo número es 0, la división debe mostrar un mensaje de error en lugar de dar error
+
+> Dato curioso: si divides entre 0 con `double`, Java muestra `Infinity`. No hay error — simplemente ese es el resultado matemático.
 
 Ejemplo de salida:
 ```
@@ -27,7 +28,7 @@ Ingresa el segundo número: 3
 Suma:           13.0
 Resta:          7.0
 Multiplicación: 30.0
-División:       3.3333...
+División:       3.3333333333333335
 ```
 
 _Tu código:_
