@@ -31,7 +31,28 @@ División:       3.3333...
 ```
 
 _Tu código:_
+import java.util.Scanner;
 
+public class CalculadoraInteractiva {
+  
+     public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+
+    //Solicita los numeros al usuario
+        System.out.print(" Ingresa el primer número: ");
+        double numero1 = sc.nextDouble();
+        System.out.print(" Ingresa el segundo número: ");
+        double numero2 = sc.nextDouble();
+
+
+    //Calcular e imprimir: suma, resta, multiplicación y división
+        System.out.println( numero1 + numero2);
+        System.out.println( numero1 - numero2);
+        System.out.println( numero1 * numero2);
+        System.out.println( numero1 / numero2);
+        sc.close();
+    }
+}
 ---
 
 ## Ejercicio 2 — Calculadora de propina (obligatorio)
@@ -51,6 +72,23 @@ Total: $402.5
 ```
 
 _Tu código:_
+import java.util.Scanner;
+public class CalculadoraPropina {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+    //Solicita subtotal de la cuenta del restaurante
+        System.out.print(" Ingresa el subtotal de tu cuenta : ");
+        double subtotal = sc.nextDouble();
+        System.out.print(" Ingresa el porcentaje de propina que desea dejar : ");
+        double PorcentajeP = sc.nextDouble();
+        System.out.println("Subtotal: $" + subtotal);
+        double propina = ((subtotal * PorcentajeP) / 100);
+         System.out.println( "Propina " + PorcentajeP + "% : $" + propina );
+        double total  = subtotal + propina;
+        System.out.println("Total: $" + total);
+        }
+
+}
 
 ---
 
@@ -68,6 +106,20 @@ El programa debe:
 2. Calcular e imprimir el IMC
 
 _Tu código:_
+import java.util.Scanner;
+public class CalculadoraIMC {
+     public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+    //Solicita subtotal de la cuenta del restaurante
+        System.out.print(" Ingresa tu peso  en Kg: ");
+        double peso = sc.nextDouble();
+        System.out.print(" Ingresa tu estatura en metros: ");
+        double estatura = sc.nextDouble();
+    //IMC = peso (kg) / estatura² (metros)
+        double imc = peso / (estatura * estatura) ;
+        System.out.println("Tu IMC es: " + imc);
+     }
+}
 
 ---
 
@@ -80,11 +132,12 @@ _Tu respuesta:_
 **¿Qué fue lo más confuso?**
 
 _Tu respuesta:_
-
+Que no había visto el tema de los if y me pedían un ejercicio donde había que ocuparlo 
 **¿Tuviste algún error? ¿Qué decía?**
 
 _Tu respuesta:_
-
+No
 **¿Pudiste resolver el ejercicio 3 de reto?**
 
 _Tu respuesta:_
+Si

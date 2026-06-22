@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f7baea3bca08d6b1",
+        "id": "aa592939c6690d01",
         "type": "tabs",
         "children": [
           {
-            "id": "4bd61612201acb57",
+            "id": "3f0ea2383bdcab3d",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -176,6 +176,12 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "4bd61612201acb57",
-  "lastOpenFiles": []
+  "active": "3f0ea2383bdcab3d",
+  "lastOpenFiles": [
+    "03_Practicas/semana-02.md",
+    "02_Teoria/semana-02.md",
+    "02_Teoria/semana-01.md",
+    "04_Entrevista/01_Preguntas_Java.md",
+    "04_Entrevista"
+  ]
 }
