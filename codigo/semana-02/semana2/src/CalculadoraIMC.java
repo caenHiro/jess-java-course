@@ -16,5 +16,4 @@ public class CalculadoraIMC {
         System.out.println("Tu IMC es: " + imc);
 
      }
-
 }
