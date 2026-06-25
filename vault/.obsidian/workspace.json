@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4f53df5319840ded",
+        "id": "aa592939c6690d01",
         "type": "tabs",
         "children": [
           {
-            "id": "3cc6ce3c77e528b2",
+            "id": "3f0ea2383bdcab3d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "02_Teoria/semana-04.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "semana-04"
             }
           }
         ]
@@ -40,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Explorador de archivos"
+              "title": "Files"
             }
           },
           {
@@ -167,28 +171,28 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Abrir selector rápido": false,
-      "graph:Abrir vista gráfica": false,
-      "canvas:Crear nuevo lienzo": false,
-      "daily-notes:Abrir la nota de hoy": false,
-      "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false,
-      "bases:Crear nueva base": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
     }
   },
-  "active": "3cc6ce3c77e528b2",
+  "active": "3f0ea2383bdcab3d",
   "lastOpenFiles": [
+    "03_Practicas/semana-04.md.tmp.24324.bb9d00ab5aa2",
+    "02_Teoria/semana-04.md.tmp.24324.c28e163507e2",
+    "03_Practicas/semana-04.md.tmp.24324.f8bd1e51efb8",
+    "02_Teoria/semana-04.md.tmp.24324.c2156e847930",
     "03_Practicas/semana-04.md",
     "02_Teoria/semana-04.md",
-    "03_Practicas/semana-03.md",
-    "02_Teoria/semana-07.md",
-    "02_Teoria/semana-06.md",
-    "02_Teoria/semana-05.md",
-    "04_Entrevista/01_Preguntas_Java.md",
     "02_Teoria/semana-03.md",
     "03_Practicas/semana-02.md",
     "02_Teoria/semana-02.md",
     "02_Teoria/semana-01.md",
+    "04_Entrevista/01_Preguntas_Java.md",
     "04_Entrevista"
   ]
 }
