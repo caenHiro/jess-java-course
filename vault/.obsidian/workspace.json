@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_Teoria/semana-04.md",
+                "file": "03_Practicas/semana-05.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "semana-04"
+              "title": "semana-05"
             }
           }
         ]
@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Explorador de archivos"
             }
           },
           {
@@ -171,23 +171,26 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
     }
   },
   "active": "3f0ea2383bdcab3d",
   "lastOpenFiles": [
+    "03_Practicas/semana-04.md",
+    "02_Teoria/semana-05.md",
+    "03_Practicas/semana-05.md",
+    "02_Teoria/semana-04.md",
+    "03_Practicas/semana-01.md",
     "03_Practicas/semana-04.md.tmp.24324.bb9d00ab5aa2",
     "02_Teoria/semana-04.md.tmp.24324.c28e163507e2",
     "03_Practicas/semana-04.md.tmp.24324.f8bd1e51efb8",
     "02_Teoria/semana-04.md.tmp.24324.c2156e847930",
-    "03_Practicas/semana-04.md",
-    "02_Teoria/semana-04.md",
     "02_Teoria/semana-03.md",
     "03_Practicas/semana-02.md",
     "02_Teoria/semana-02.md",

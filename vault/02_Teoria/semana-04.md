@@ -375,7 +375,7 @@ int numero;
 do {
     System.out.print("Ingresa un número entre 1 y 10: ");
     numero = sc.nextInt();
-} while (numero < 1 || numero > 10);
+} while (numero  > 1 || numero  < 10);
 
 System.out.println("Ingresaste: " + numero);
 ```

@@ -108,20 +108,42 @@ Archivo: `codigo/semana-04/SumaN.java`
 ```java
 import java.util.Scanner;
 
-public class SumaN {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Ingresa N: ");
-        int n = sc.nextInt();
+  
 
-        int suma = 0;          // ANTES del ciclo: empieza en 0
-        for (int i = 1; i <= n; i++) {
-            suma = suma + i;   // DENTRO: acumula vuelta por vuelta
-        }
+public class Suma {
 
-        System.out.println("La suma del 1 al " + n + " es: " + suma);  // DESPUÉS: resultado final
-        sc.close();
-    }
+    public static void main(String[] args) throws Exception {
+
+       Scanner sc = new Scanner(System.in);
+
+    // Pedir al usuario un número
+
+    System.out.print(" Ingresa un número: ");
+
+    int num = sc.nextInt();
+
+    int sum = 0;
+
+  
+
+    System.out.println("Ingresaste el nuúmero:  " + num);
+
+    for (int i = 1; i <= num; i++) {
+
+    sum = sum + i;  
+
+}
+
+System.out.println("La suma del numero 1 al  " + num + " es = "+ sum);
+
+  
+
+sc.close();
+
+    }
+
+  
+
 }
 ```
 
@@ -145,31 +167,39 @@ _Tu código:_
 ```java
 import java.util.Scanner;
 
-
+  
 
 public class Suma {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-       Scanner sc = new Scanner(System.in);
+       Scanner sc = new Scanner(System.in);
 
-    // Pedir al usuario un número
+    // Pedir al usuario un número
 
-    System.out.print(" Ingresa un número: ");
+    System.out.print(" Ingresa un número: ");
 
-    int num = sc.nextInt();
+    int num = sc.nextInt();
 
-    int sum = 0;
+    int sum = 0;
 
-    for (int i = 1; i <= num; i++) {
+  
 
-    sum = sum + i;  
+    System.out.println("Ingresaste el nuúmero:  " + num);
+
+    for (int i = 1; i <= num; i++) {
+
+    sum = sum + i;  
 
 }
 
-System.out.println("Sumatoria = " + sum);
+System.out.println("La suma del numero 1 al  " + num + " es = "+ sum);
 
-    }
+  
+
+sc.close();
+
+    }
 
   
 
@@ -246,6 +276,63 @@ Lo lograste en 3 intentos!
 
 _Tu código:_
 
+```java
+import java.util.Scanner;
+
+  
+
+public class AdivinaNum {
+
+    public static void main(String[] args) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+
+  
+
+        int numero = 11;
+
+        int intentos = 0;    
+
+        int intento;
+
+        System.out.println("Adivina el número (entre 1 y 100)");
+
+  
+
+        do {
+
+            System.out.print("Ingresa un numero entre el 1 y el 100: ");
+
+            intento = sc.nextInt();
+
+            intentos++;  
+
+  
+
+            if (intento < numero) {
+
+                System.out.println("El número secreto es mayor al que ingresaste, intenta con uno más grande");
+
+            } else if (intento > numero) {
+
+                System.out.println("El número secreto es menor al que ingresaste, intenta con uno más pequeño");
+
+            }
+
+        } while (intento != numero);  
+
+  
+
+        System.out.println("Lo lograste en " + intentos + " intentos!");  
+
+        sc.close();
+
+    }
+
+    }
+```
+
+
 ---
 
 ## Ejercicio 4 — Contador de pares
@@ -296,6 +383,30 @@ Números pares del 1 al 10:
 ```
 
 _Tu código:_
+
+```java
+import java.util.Scanner;
+public class ContadorPares {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+    int contador = 0 ;
+    // Pedir al usuario un número
+    System.out.print(" Ingresa un número: ");
+    int num = sc.nextInt();
+    System.out.println("Números pares del 1 al " + num + ":");
+    // Dentro del ciclo: si `i % 2 == 0`, imprimes `i`
+    for (int i = 1; i <= num; i++) {
+        if (i % 2 == 0) {
+            contador += 1;
+               System.out.println(i);
+            }
+    }
+    System.out.println("El numero " + num + " contiene " + contador + " numeros pares");
+    sc.close();
+
+    }
+}
+```
 
 ---
 
