@@ -19,6 +19,20 @@ Crea un array con 5 frutas de tu elección. Luego imprime la lista en orden INVE
 
 _Tu código:_
 
+```java
+public class ListaFrutas {
+
+   public static void main(String[] args) {
+        // Lista de frutas
+        String[] frutas = {"platano", "cereza", "kiwi", "pera", "piña"};
+        System.out.println("Lista al reves:");
+        for (int i = frutas.length - 1; i >= 0; i--) {
+            System.out.println(frutas[i]);   // imprime el elemento en posicion i
+        }
+    }
+}
+```
+
 ---
 
 ## Ejercicio 2 — Contar vocales (obligatorio)
