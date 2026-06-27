@@ -47,7 +47,31 @@ El programa debe:
 Pista: usa `charAt(i)` en un ciclo y compara cada caracter.
 
 _Tu código:_
+```java
+public class ContarVocales {
 
+    public static void main(String[] args) throws Exception {
+
+        String nombre = "Jessica Yadziry Chino Colin";
+
+        int contador = 0;
+
+        for (int i = 0 ; i < nombre.length(); i++ ) {
+
+            if (nombre.charAt(i) == 'a' || nombre.charAt(i) == 'e' || nombre.charAt(i) == 'i' || nombre.charAt(i) == 'o' || nombre.charAt(i) == 'u'){
+
+                contador++;
+
+            }
+
+}
+
+    System.out.println(nombre + " tiene " + contador + " vocales");  
+
+    }
+
+}
+```
 ---
 
 ## Ejercicio 3 — Promedio de calificaciones (reto)
@@ -61,7 +85,40 @@ El programa debe:
 4. Imprimir todo
 
 _Tu código:_
+```java
+public class Promedio {
 
+    public static void main(String[] args) throws Exception {
+
+        double[] calificaciones = {55, 77, 95, 100, 88, 67};
+        double sum = 0;
+        double max = calificaciones[0];
+        double min = calificaciones[0];
+
+  
+        for (double c : calificaciones) {
+            sum += c;          
+            if (c > max) {
+                max = c;        
+            }
+
+            if (c < min) {
+                min = c;        
+            }
+        }
+        double promedio = sum / calificaciones.length; 
+        System.out.println("El promedio es: " + promedio);    
+        System.out.println("Calificación mas alta: " + max);          
+        System.out.println("Calificación mas baja: " + min);
+
+  
+
+    }
+
+  
+
+}
+```
 ---
 
 ## Reflexión
