@@ -25,6 +25,69 @@ En `Main.java`, crea al menos 2 objetos Persona y prueba todos los métodos.
 
 _Tu código:_
 
+```java
+public class Persona {
+    //atribitos
+    private String nombre;
+    private int  edad;
+    private String ciudad;
+    //Constructor
+    public Persona (String nombre, int  edad,  String ciudad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.ciudad = ciudad;
+    }
+    public void saluda () {
+        System.out.println("Hola mi nombre es " + nombre + " , tengo " + edad + " años y vivo en " + ciudad);
+    }
+    public boolean mayorDeEdad () {
+        return edad >= 18;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public int getEdad() {
+        return edad;
+    }
+    public String getCiudad(){
+        return ciudad;
+    }
+}
+
+
+
+public class Main {
+
+     public static void main(String[] args) throws Exception {
+
+        Persona jess = new Persona( "Jess", 35, "Ciudad de Mexico");
+
+        Persona carlos = new Persona( "Carlos", 34, "Ciudad de Mexico");
+
+  
+
+        jess.saluda();
+
+        carlos.saluda();
+
+  
+
+        System.out.println(jess.getNombre() + " tiene " + jess.getEdad() + " años");
+
+  
+
+        if (jess.mayorDeEdad()) {
+
+            System.out.println(jess.getNombre() + " es mayor de edad. ");
+
+        }
+
+    }
+
+}
+
+```
+
 ---
 
 ## Ejercicio 2 — Clase Producto con IVA (obligatorio)
@@ -40,7 +103,134 @@ Crea la clase `Producto` con:
 - Método `mostrarInfo()` que imprima toda la información del producto
 
 _Tu código:_
+```java
+public class Producto {
 
+    //atribitos
+
+    private  String nombre;
+
+    private double precio;
+
+    private String categoria;
+
+  
+
+    //Constructor
+
+    public Producto(String nombre, double precio,  String categoria) {
+
+        this.nombre = nombre;
+
+        this.precio = precio > 0 ? precio : 0;
+
+        this.categoria = categoria;
+
+    }
+
+  
+
+    //Getter
+
+    public String getNombre(){
+
+        return nombre;
+
+    }
+
+    public double  getPrecio (){
+
+        return precio;
+
+    }
+
+    public String getCategoria() {
+
+        return categoria;
+
+    }
+
+  
+
+    //Setter
+
+    public void setPrecio(double  precio){
+
+        if(precio > 0){
+
+            this.precio = precio;
+
+        }
+
+    }
+
+    //poner precio mas iva
+
+    public double  precioConIva (double  precio){
+
+        return precio * 1.16;
+
+    }
+
+  
+
+    public  void mostrarInfo() {
+
+        System.out.println("[ " + getCategoria() + " ]" + getNombre() + " - $" + getPrecio() + " precio con IVA " + precioConIva(getPrecio()) );
+
+    }
+}
+
+
+
+
+public class Main2 {
+
+    public static void main(String[] args) {
+
+        Producto s = new Producto( " Frijol" , 56 , "Semillas" );
+
+        Producto v = new Producto( " Lechuga" , 22, "Verdura" );
+
+        Producto a = new Producto( " Boing" , 50 , "Bebida" );
+
+  
+
+        //Mostrar los productos
+
+        System.out.println("=== Productos del tianguis ===");
+
+        s.mostrarInfo();
+
+        v.mostrarInfo();
+
+        a.mostrarInfo();
+
+  
+
+        //Set es para modificar un valor
+
+        v.setPrecio(33);
+
+        System.out.println("Precio actualizado: ");
+
+        v.mostrarInfo();
+
+  
+
+        a.setPrecio(-22);
+
+        System.err.println("Precio actualizado:");
+
+        a.mostrarInfo();
+
+    }
+
+  
+
+}
+
+```
 ---
 
 ## Ejercicio 3 — Cuenta bancaria (reto)

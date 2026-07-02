@@ -1,0 +1,95 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes. Error detail: AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:44), pid=31088, tid=17724
+#
+# JRE version: OpenJDK Runtime Environment Temurin-21.0.11+10 (21.0.11+10) (build 21.0.11+10-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Temurin-21.0.11+10 (21.0.11+10-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, parallel gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-modules=ALL-SYSTEM --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable -javaagent:c:\Users\jessica.chino\.vscode\extensions\redhat.java-1.55.0-win32-x64\lombok\lombok-1.18.39-4050.jar -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=c:\Users\jessica.chino\AppData\Roaming\Code\User\workspaceStorage\ceed787d8de7e73cf6eeaf5df9d863b3\redhat.java -Daether.dependencyCollector.impl=bf -agentpath:C:\Program Files\SentinelOne\Sentinel Agent 26.1.1.163\SentinelJava64.dll=extendedCapabilities c:\Users\jessica.chino\.vscode\extensions\redhat.java-1.55.0-win32-x64\server\plugins\org.eclipse.equinox.launcher_1.7.200.v20260619-2039.jar -configuration c:\Users\jessica.chino\AppData\Roaming\Code\User\globalStorage\redhat.java\1.55.0\config_win -data c:\Users\jessica.chino\AppData\Roaming\Code\User\workspaceStorage\ceed787d8de7e73cf6eeaf5df9d863b3\redhat.java\jdt_ws --pipe=\\.\pipe\lsp-e1c1b5f2b590a70e8de73a1158984813-sock
+
+Host: AMD Ryzen 7 7730U with Radeon Graphics         , 16 cores, 14G,  Windows 11 , 64 bit Build 26100 (10.0.26100.8521)
+Time: Tue Jun 30 12:37:04 2026 Hora estándar central (México) elapsed time: 237619.314948 seconds (2d 18h 0m 19s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000026ca0aa1280):  JavaThread "Attach Listener" daemon [_thread_in_vm, id=17724, stack(0x000000fe2ef00000,0x000000fe2f000000) (1024K)]
+
+Stack: [0x000000fe2ef00000,0x000000fe2f000000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6d7e19]
+V  [jvm.dll+0x8b5096]
+V  [jvm.dll+0x8b764e]
+V  [jvm.dll+0x8b7d33]
+V  [jvm.dll+0x284596]
+V  [jvm.dll+0xc13c7]
+V  [jvm.dll+0x6d86c9]
+V  [jvm.dll+0x133616]
+V  [jvm.dll+0x3f868e]
+V  [jvm.dll+0x85fb0d]
+V  [jvm.dll+0x6d664d]
+C  [ucrtbase.dll+0x2cd30]
+C  [KERNEL32.DLL+0x2e957]
+C  [ntdll.dll+0x87c1c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000026cabb6a740, length=43, elements={
+0x0000026c457f7890, 0x0000026c5ead8720, 0x0000026ca0a93620, 0x0000026ca0aa0810,
+0x0000026ca0aa1280, 0x0000026ca0a9c640, 0x0000026ca0a9e560, 0x0000026ca0acb230,
+0x0000026c5eadb620, 0x0000026ca0d6cf00, 0x0000026ca784c820, 0x0000026ca8da9e60,
+0x0000026ca813c2c0, 0x0000026ca7ff40a0, 0x0000026ca7ff4f20, 0x0000026ca80e0ec0,
+0x0000026ca9615fa0, 0x0000026ca0c9ae80, 0x0000026ca0c98db0, 0x0000026ca0c98720,
+0x0000026cadf7b070, 0x0000026cadf7a350, 0x0000026cadf77bf0, 0x0000026cadf78280,
+0x0000026cadf7b700, 0x0000026cadf7bd90, 0x0000026cadf7c420, 0x0000026cadf79cc0,
+0x0000026cadf7cab0, 0x0000026cadf7a9e0, 0x0000026cadf79630, 0x0000026cadf7e4f0,
+0x0000026cadf7d140, 0x0000026cadf7de60, 0x0000026cadf7d7d0, 0x0000026cadf7eb80,
+0x0000026cadf7f210, 0x0000026cac5edb90, 0x0000026cac5ee220, 0x0000026cac5ec150,
+0x0000026cadc54320, 0x0000026cadc528e0, 0x0000026ca0c99ad0
+}
+
+Java Threads: ( => current thread )
+  0x0000026c457f7890 JavaThread "main"                              [_thread_blocked, id=12280, stack(0x000000fe2e800000,0x000000fe2e900000) (1024K)]
+  0x0000026c5ead8720 JavaThread "Reference Handler"          daemon [_thread_blocked, id=6552, stack(0x000000fe2ec00000,0x000000fe2ed00000) (1024K)]
+  0x0000026ca0a93620 JavaThread "Finalizer"                  daemon [_thread_blocked, id=13832, stack(0x000000fe2ed00000,0x000000fe2ee00000) (1024K)]
+  0x0000026ca0aa0810 JavaThread "Signal Dispatcher"          daemon [_thread_blocked, id=16888, stack(0x000000fe2ee00000,0x000000fe2ef00000) (1024K)]
+=>0x0000026ca0aa1280 JavaThread "Attach Listener"            daemon [_thread_in_vm, id=17724, stack(0x000000fe2ef00000,0x000000fe2f000000) (1024K)]
+  0x0000026ca0a9c640 JavaThread "Service Thread"             daemon [_thread_blocked, id=2636, stack(0x000000fe2f000000,0x000000fe2f100000) (1024K)]
+  0x0000026ca0a9e560 JavaThread "Monitor Deflation Thread"   daemon [_thread_blocked, id=18140, stack(0x000000fe2f100000,0x000000fe2f200000) (1024K)]
+  0x0000026ca0acb230 JavaThread "C2 CompilerThread0"         daemon [_thread_blocked, id=8652, stack(0x000000fe2f200000,0x000000fe2f300000) (1024K)]
+  0x0000026c5eadb620 JavaThread "C1 CompilerThread0"         daemon [_thread_blocked, id=22212, stack(0x000000fe2f300000,0x000000fe2f400000) (1024K)]
+  0x0000026ca0d6cf00 JavaThread "Common-Cleaner"             daemon [_thread_blocked, id=19252, stack(0x000000fe2f900000,0x000000fe2fa00000) (1024K)]
+  0x0000026ca784c820 JavaThread "Notification Thread"        daemon [_thread_blocked, id=33020, stack(0x000000fe2f800000,0x000000fe2f900000) (1024K)]
+  0x0000026ca8da9e60 JavaThread "Active Thread: Equinox Container: 7dd0cf50-1304-4f2d-a3fe-655f969ecd81"        [_thread_blocked, id=6084, stack(0x000000fe30500000,0x000000fe30600000) (1024K)]
+  0x0000026ca813c2c0 JavaThread "Refresh Thread: Equinox Container: 7dd0cf50-1304-4f2d-a3fe-655f969ecd81" daemon [_thread_blocked, id=29216, stack(0x000000fe30700000,0x000000fe30800000) (1024K)]
+  0x0000026ca7ff40a0 JavaThread "Framework Event Dispatcher: Equinox Container: 7dd0cf50-1304-4f2d-a3fe-655f969ecd81" daemon [_thread_blocked, id=13056, stack(0x000000fe30300000,0x000000fe30400000) (1024K)]
+  0x0000026ca7ff4f20 JavaThread "Start Level: Equinox Container: 7dd0cf50-1304-4f2d-a3fe-655f969ecd81" daemon [_thread_blocked, id=9516, stack(0x000000fe30400000,0x000000fe30500000) (1024K)]
+  0x0000026ca80e0ec0 JavaThread "Bundle File Closer"         daemon [_thread_blocked, id=26144, stack(0x000000fe30a00000,0x000000fe30b00000) (1024K)]
+  0x0000026ca9615fa0 JavaThread "SCR Component Actor"        daemon [_thread_blocked, id=1892, stack(0x000000fe2f500000,0x000000fe2f600000) (1024K)]
+  0x0000026ca0c9ae80 JavaThread "Worker-JM"                         [_thread_blocked, id=23272, stack(0x000000fe30f00000,0x000000fe31000000) (1024K)]
+  0x0000026ca0c98db0 JavaThread "Java indexing"              daemon [_thread_blocked, id=12728, stack(0x000000fe31200000,0x000000fe31300000) (1024K)]
+  0x0000026ca0c98720 JavaThread "JNA Cleaner"                daemon [_thread_blocked, id=12776, stack(0x000000fe31400000,0x000000fe31500000) (1024K)]
+  0x0000026cadf7b070 JavaThread "Thread-1"  ]
