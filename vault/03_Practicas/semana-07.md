@@ -248,6 +248,85 @@ _Tu código:_
 
 ---
 
+## Retroalimentacion — Semana 7
+
+### Lo que hiciste bien ✅
+
+- Constructor correcto con `this` en ambas clases — exactamente como se pide
+- Validacion en el constructor de Producto (`precio > 0 ? precio : 0`) — muy bien
+- Setter con validacion en `setPrecio` — perfecto
+- Los objetos se crean correctamente con `new` en Main y Main2
+- Los atributos son `private` en ambas clases — bien
+
+### Lo que hay que corregir ⚠️
+
+**1. Cada clase en su propio archivo**
+
+En tus practicas pegaste `Persona` y `Main` en el mismo bloque de codigo. En Java cada clase publica va en su propio archivo `.java`. Java no compila si hay dos clases `public` en el mismo archivo.
+
+```
+Persona.java  <- solo contiene: public class Persona { ... }
+Main.java     <- solo contiene: public class Main { ... }
+```
+
+En tu carpeta `codigo/semana-07/Semana7/src/` ya lo tienes correcto (archivos separados). En las notas de practica, cuando copies el codigo, muestra cada clase con su nombre de archivo encima.
+
+**2. Nombres de metodos — la firma importa**
+
+Se pidio `saludar()` pero escribiste `saluda()`. Se pidio `esMayorDeEdad()` pero escribiste `mayorDeEdad()`. En Java el nombre del metodo es parte del contrato — si el ejercicio pide `saludar()` y escribes `saluda()`, son dos metodos distintos. Revisa siempre el nombre exacto que se pide.
+
+**3. Getters dentro de la propia clase — no son necesarios**
+
+En tu `mostrarInfo()` de Producto usaste `getCategoria()`, `getNombre()`, `getPrecio()` desde dentro de la clase:
+
+```java
+// Tu version — funciona pero es innecesario
+public void mostrarInfo() {
+    System.out.println("[ " + getCategoria() + " ]" + getNombre() + " - $" + getPrecio() + "...");
+}
+```
+
+**Regla de oro:** los getters son para que OTRA clase lea tus datos. Dentro de tu propia clase tienes acceso directo a los atributos `private`:
+
+```java
+// Version correcta — dentro de Producto.java accedes directo
+public void mostrarInfo() {
+    System.out.println("[" + categoria + "] " + nombre + " - $" + precio + "...");
+}
+```
+
+**4. Firma de metodo — `precioConIva` no necesita parametro**
+
+Definiste `precioConIva(double precio)` recibiendo precio desde afuera. Pero `precio` ya es un atributo del objeto — no necesitas que te lo manden:
+
+```java
+// Tu version — recibe precio como parametro (el objeto ya lo tiene)
+public double precioConIva(double precio) {
+    return precio * 1.16;
+}
+// Al llamarlo tienes que hacer: precioConIva(getPrecio()) <- redundante
+
+// Version correcta — usa el atributo directamente
+public double calcularPrecioConIVA() {
+    return precio * 1.16;   // precio = el atributo del objeto
+}
+// Al llamarlo basta con: calcularPrecioConIVA() <- limpio
+```
+
+### Ejercicio 3 — Pendiente
+
+`CuentaBancaria.java` esta vacia. Cuando puedas, implementa:
+- Atributos privados: `titular`, `saldo`, `numeroCuenta`
+- Constructor que valide que el saldo inicial no sea negativo
+- `depositar(double cantidad)` — solo si cantidad > 0
+- `retirar(double cantidad)` — solo si hay suficiente saldo
+- `getSaldo()` — getter del saldo
+- `mostrarResumen()` — imprime los datos de la cuenta
+
+En `BancoMain.java` crea 2 cuentas y prueba depositar, retirar (con y sin fondos suficientes).
+
+---
+
 ## Reflexión
 
 **¿Cuál es la diferencia entre una clase y un objeto?**

@@ -1,10 +1,6 @@
 # Semana 7 — Clases y Objetos (POO basico)
 
-> Tiempo estimado: 3–5 horas
-> Al terminar: `bash scripts/push.sh "semana-07 poo — clases y objetos"`
-
----
-
+> Notas del DOCENTE — incluye explicaciones pedagogicas y puntos clave a enfatizar.
 > ESTA ES LA SEMANA MAS IMPORTANTE DEL CURSO. Dar tiempo extra si es necesario.
 > Si Jess no entiende algo, NO avanzar — esta semana es la base de todo lo que sigue.
 
@@ -12,7 +8,7 @@
 
 ## Objetivo de la semana
 
-Al terminar, Al terminar esta semana debes poder:
+Al terminar, Jess debe poder:
 - Explicar con sus palabras la diferencia entre clase y objeto
 - Crear una clase con atributos y un constructor
 - Crear objetos usando `new`
@@ -25,7 +21,7 @@ Al terminar, Al terminar esta semana debes poder:
 
 ---
 
-## Analogia clave 
+## Analogia clave (enfasis en clase)
 
 > "Una clase es como el molde de un tamal. El molde define la forma: masa, relleno, hoja. Cuando haces un tamal CON ese molde, eso es un objeto. Puedes hacer 100 tamales con el mismo molde — todos tienen la misma estructura (mismos atributos), pero diferente contenido (distintos valores)."
 
@@ -127,9 +123,73 @@ public class Persona {
 
 **Punto critico:** notar que NO hay `static` en los metodos de la clase (a diferencia de lo que hemos hecho hasta ahora). Los metodos de instancia pertenecen al objeto, no a la clase. Este es el cambio mas grande de la semana.
 
+---
+
+### REGLA DE ORO: atributos private — dentro vs fuera de la clase
+
+Esta es la regla mas importante de encapsulamiento y la que mas confunde al principio:
+
+| Desde donde quieres acceder | Atributo `private` | ¿Como? |
+|---|---|---|
+| Dentro de la MISMA clase | ✅ Acceso DIRECTO | `nombre`, `edad`, `precio` — sin getter |
+| Desde OTRA clase (otro archivo) | ❌ Prohibido directo | Debes usar el getter: `getNombre()` |
+
+**Los getters y setters existen para el EXTERIOR.** Dentro de la clase, los metodos usan los atributos directamente. Llamar a un getter dentro de la propia clase funciona, pero es redundante e innecesario.
+
+```java
+// Dentro de Persona.java — CORRECTO
+public void saludar() {
+    System.out.println("Hola, soy " + nombre);   // directo — estamos dentro de la clase
+}
+
+// Dentro de Persona.java — TAMBIEN funciona pero es redundante e innecesario
+public void saludar() {
+    System.out.println("Hola, soy " + getNombre());   // para que llamar al getter si ya tengo el atributo?
+}
+
+// Desde Main.java — OBLIGATORIO usar getter
+public class Main {
+    public static void main(String[] args) {
+        Persona jess = new Persona("Jess", 22, "CDMX");
+        System.out.println(jess.nombre);     // ERROR de compilacion: private access
+        System.out.println(jess.getNombre()); // CORRECTO: el getter es la puerta publica
+    }
+}
+```
+
+---
+
+### REGLA DE ORO: firma de metodo — con parametros vs sin parametros
+
+Un metodo que opera sobre los datos del PROPIO objeto **no necesita parametros para esos datos** — ya los tiene como atributos:
+
+```java
+// CORRECTO — usa el atributo precio del objeto directamente
+public double calcularPrecioConIVA() {
+    return precio * 1.16;   // precio es el atributo de este objeto
+}
+
+// INCORRECTO — recibe precio como parametro cuando ya lo tiene como atributo
+public double calcularPrecioConIVA(double precio) {
+    return precio * 1.16;   // este precio es el parametro, no el atributo
+                            // ademas oculta el atributo del objeto (mismo nombre)
+}
+```
+
+**Cuándo SÍ usar parámetros:** cuando el metodo necesita informacion que el objeto NO tiene.
+
+```java
+// El porcentaje de descuento es informacion EXTERNA — no es un atributo del producto
+public double calcularConDescuento(double porcentaje) {
+    return precio * (1 - porcentaje / 100);   // precio = atributo; porcentaje = parametro externo
+}
+```
+
+---
+
 ### 7.4 Usar la clase — crear objetos
 
-Para usar nuestra clase `Persona`, necesitamos un archivo separado (o podemos hacerlo en la misma clase en el main si la clase lo tiene):
+Para usar nuestra clase `Persona`, necesitamos un **archivo separado**. Cada clase publica en Java va en su propio archivo `.java`:
 
 ```java
 // Archivo: Main.java
@@ -324,6 +384,21 @@ Ambos archivos deben estar en la misma carpeta para que Java pueda encontrarlos.
    - Ejemplo: `Persona.saludar()` en lugar de `jess.saludar()`.
    - Como detectarlo: error "cannot make a static reference to non-static method".
    - Como corregirlo: siempre llamar el metodo sobre el objeto: `jess.saludar()`.
+
+7. **Usar getters dentro de la propia clase** — no es un error de compilacion, pero indica que Jess no entendio la regla de acceso.
+   - Ejemplo: dentro de `mostrarInfo()` en `Producto.java` hacer `getNombre()` en vez de `nombre`.
+   - Por que pasa: Jess cree que `private` significa "siempre necesito getter", cuando significa "solo acceso directo desde dentro de la clase".
+   - Como corregirlo: dentro de la clase usa los atributos directamente. Los getters son para cuando otro archivo quiere leer el dato.
+
+8. **Metodo que usa atributo del objeto, pero lo recibe como parametro** — firma incorrecta.
+   - Ejemplo: `public double precioConIva(double precio)` dentro de `Producto`, cuando `precio` ya es un atributo.
+   - Consecuencia: al llamarlo desde `mostrarInfo()` hay que hacer `precioConIva(getPrecio())` — redundante y confuso.
+   - Como corregirlo: `public double calcularPrecioConIVA()` sin parametros, usando directamente `precio` (el atributo).
+
+9. **Dos clases `public` en el mismo archivo** — error de compilacion en Java.
+   - Ejemplo: `Persona.java` con `public class Persona { }` y `public class Main { }` adentro.
+   - Como detectarlo: el compilador dice "class Main is public, should be declared in a file named Main.java".
+   - Como corregirlo: cada clase publica va en su propio archivo. `Persona.java` solo tiene `class Persona`. `Main.java` solo tiene `class Main`. Ambos archivos van en la misma carpeta.
 
 ---
 
@@ -551,3 +626,28 @@ public class BancoMain {
 ```
 
 ---
+
+## Criterios de calificacion — Semana 7
+
+| Criterio | Puntos |
+|----------|--------|
+| Las clases compilan y los objetos se crean correctamente con `new` | 2 pts |
+| El constructor inicializa correctamente todos los atributos con `this` | 2 pts |
+| Los atributos son `private` y tienen getters/setters donde corresponde | 2 pts |
+| Los metodos funcionan correctamente (saludar, depositar, retirar, etc.) | 2 pts |
+| Reflexion completada con respuestas propias | 2 pts |
+| **Total** | **10 pts** |
+
+---
+
+## Senales de alerta
+
+- Si Jess pone `static` en todos los metodos: es normal al principio (viene de las semanas anteriores donde todo era static). Explicar: "static = de la clase. Sin static = del objeto. Los metodos que usan atributos del objeto no pueden ser static."
+- Si le cuesta entender `this`: usar el ejemplo del formulario. "Cuando el formulario pregunta 'nombre', se refiere al dato de ESTA persona especifica que se esta inscribiendo ahora. `this.nombre` es el nombre de ESTE objeto."
+- Si se confunde con dos archivos `.java`: aclarar que ambos deben estar en la MISMA carpeta. Java los encuentra solos cuando estan en el mismo directorio.
+- Si los getters se le olvidan y accede directamente a los atributos: recibira error de compilacion. Esto es BUENO — significa que el encapsulamiento funciona. Guiarle al getter correspondiente.
+- Si el reto de CuentaBancaria le parece muy dificil: hacer Persona y Producto primero. La cuenta bancaria puede quedarse para la siguiente clase si es necesario.
+- Si Jess pregunta "¿para que sirve todo esto?": mostrarle el ejemplo del inicio — 100 empleados sin POO vs 100 empleados con POO. La escala lo hace evidente.
+- Si Jess llama getters dentro de la propia clase: preguntar "¿desde que archivo estas llamando esto?" Si la respuesta es "desde dentro de Producto.java", decirle "entonces tienes acceso directo a los atributos, no necesitas ir por la puerta de atras". Mostrar la REGLA DE ORO: dentro = directo, fuera = getter.
+- Si Jess define un metodo con un parametro que ya es atributo del objeto: preguntarle "¿el objeto ya sabe su precio? ¿entonces para que se lo mandamos?". Que ella misma llegue a la conclusion de que el metodo debe usar el atributo directamente.
+- Si Jess pega dos clases en el mismo archivo: mostrarle el error del compilador y explicar la regla: "un archivo .java = una clase publica. El nombre del archivo es el nombre de la clase."
