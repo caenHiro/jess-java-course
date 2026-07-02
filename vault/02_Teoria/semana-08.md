@@ -1,26 +1,24 @@
 # Semana 8 — Herencia y Polimorfismo
 
-> Tiempo estimado: 3–5 horas
-> Al terminar: `bash scripts/push.sh "semana-08 herencia"`
-
----
-
+> Notas del DOCENTE — incluye explicaciones pedagógicas, puntos clave a enfatizar y señales de alerta.
 
 ---
 
 ## Objetivo de la semana
 
-Al terminar, Al terminar esta semana debes poder:
+Al terminar, Jess debe poder:
 - Explicar con sus palabras qué es la herencia y cuándo usarla
 - Crear una clase hijo con `extends` que herede de una clase padre
 - Usar `super(...)` en el constructor del hijo para llamar al padre
 - Sobreescribir un método con `@Override`
 - Explicar qué es polimorfismo con un ejemplo propio
 
+**Ya sabe:** clases, objetos, atributos, métodos, constructores, `this`, encapsulamiento, `Scanner`, ciclos, condicionales.  
+**No ha visto:** interfaces, clases abstractas, `ArrayList`, excepciones, SQL.
 
 ---
 
-## Analogía clave 
+## Analogía clave (énfasis en clase)
 
 > "Imagínate que en el mercado hay un puesto de 'Comida'. Todos los puestos de comida tienen cosas en común: un nombre, un precio, una forma de servir. Pero el puesto de tacos sirve diferente al de tortas, que sirve diferente al de quesadillas. Cada uno hereda las características básicas de 'puesto de comida', pero hace las cosas a su manera."
 
@@ -79,31 +77,53 @@ public class Animal {
 ```java
 // Clase HIJO — extiende (hereda de) Animal
 public class Perro extends Animal {
-    // atributo PROPIO del Perro — el padre no lo tiene
-    private String raza;
 
-    // Constructor del hijo
-    public Perro(String nombre, String raza) {
-        // PRIMERA línea: llamar al constructor del padre con super()
+    // Constructor del hijo — solo pide nombre, la especie ya la sabe
+    public Perro(String nombre) {
+        // PRIMERA línea OBLIGATORIA: llamar al constructor del padre con super()
         // "le decimos al padre: inicialízate con este nombre y esta especie"
         super(nombre, "Canis lupus familiaris");
-        // luego inicializamos el atributo propio del Perro
-        this.raza = raza;
+        // si el Perro tuviera atributos propios, los inicializariamos aqui
     }
 
     // @Override: sobreescribimos el método del padre con comportamiento específico
     @Override
     public void hacerSonido() {
-        // ahora en lugar de "..." el perro dice su propio sonido
-        System.out.println(nombre + ": ¡Guau!");   // nombre viene del padre (protected)
+        // nombre viene del PADRE y es protected — el hijo puede usarlo directo
+        System.out.println(nombre + ": ¡Guau!");
     }
 
-    // Método PROPIO del Perro — el padre no lo tiene
+    // Método PROPIO del Perro — Animal no lo tiene
     public void buscarPelota() {
         System.out.println(nombre + " busca la pelota!");
     }
 }
 ```
+
+**Punto clave — `protected` vs `private`:**
+
+Nota que el padre declara sus atributos con `protected`, no `private`. Esta es la diferencia:
+
+| Modificador | ¿Quien puede acceder? |
+|---|---|
+| `private` | Solo la propia clase (`Animal`) |
+| `protected` | La propia clase + todos sus hijos (`Perro`, `Gato`, `Pajaro`) |
+| `public` | Cualquier clase en cualquier archivo |
+
+En herencia usamos `protected` en el padre para que los hijos puedan usar `nombre` y `especie` directamente, igual que en semana 7 usabas `nombre` dentro de los metodos de `Persona`.
+
+**Los archivos para esta semana:**
+
+```
+semana-08/
+├── Animal.java      ← clase padre
+├── Perro.java       ← hijo (extends Animal)
+├── Gato.java        ← hijo (extends Animal)
+├── Pajaro.java      ← hijo (extends Animal)
+└── Main.java        ← crea objetos y prueba todo
+```
+
+Cada clase en su propio archivo. El nombre del archivo = nombre de la clase exacto.
 
 ### 8.3 La palabra clave `super`
 
@@ -476,3 +496,11 @@ public class MainFiguras {
 | **Total** | **10 pts** |
 
 ---
+
+## Señales de alerta
+
+- Si el código no compila porque "no hay constructor por defecto": el hijo no llama a `super()` o lo llama mal. Revisar que la primera línea del constructor hijo sea `super(...)` con los parámetros correctos.
+- Si `nombre` no está accesible en el hijo: el padre lo declaró `private` en lugar de `protected`. Cambiar a `protected`.
+- Si `@Override` da error: el nombre del método no coincide exactamente con el del padre. Revisar mayúsculas y parámetros.
+- Si Jess dice "para qué sirve el array de tipo Animal": explicar que esto es polimorfismo — se pueden guardar diferentes tipos de animales en una sola lista y tratarlos de la misma forma.
+- Si se frustra con cuántos archivos son: recordarle que cada archivo es una clase, y que esto es exactamente lo que hacen los proyectos reales en empresas.

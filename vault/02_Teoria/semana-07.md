@@ -187,9 +187,42 @@ public double calcularConDescuento(double porcentaje) {
 
 ---
 
-### 7.4 Usar la clase — crear objetos
+### 7.4 Usar la clase — dos archivos, dos responsabilidades
 
-Para usar nuestra clase `Persona`, necesitamos un **archivo separado**. Cada clase publica en Java va en su propio archivo `.java`:
+En Java cada clase publica va en su propio archivo `.java`. Para los ejercicios de esta semana siempre tendras DOS archivos en la misma carpeta:
+
+```
+semana-07/
+├── Persona.java    ← aqui defines la clase (molde)
+└── Main.java       ← aqui usas la clase (creas objetos y los pruebas)
+```
+
+**Regla importante:** el nombre del archivo debe ser EXACTAMENTE igual al nombre de la clase, con las mismas mayusculas.
+
+| Clase | Nombre del archivo |
+|---|---|
+| `public class Persona` | `Persona.java` ✅ |
+| `public class Persona` | `persona.java` ❌ error |
+| `public class Main` | `Main.java` ✅ |
+
+**¿Por que desde `main()` necesito el getter?**
+
+`main()` vive en `Main.java`, que es una clase DIFERENTE a `Persona`. Desde ahí no puedes tocar los atributos `private` directamente:
+
+```
+Persona.java                    Main.java
+────────────────────            ──────────────────────────────────────
+private String nombre;          Persona jess = new Persona(...);
+                                jess.nombre    ← ❌ ERROR: private
+                                               "Persona.nombre has private access"
+public String getNombre() {     jess.getNombre() ← ✅ el getter es la
+    return nombre;                              puerta publica al atributo
+}
+```
+
+El getter es la "ventanilla" que la clase abre al exterior. Adentro de `Persona.java`, tus metodos usan `nombre` directamente. Afuera (en `Main.java`), tienen que pasar por la ventanilla.
+
+Para usar nuestra clase `Persona`, el archivo `Main.java` se ve asi:
 
 ```java
 // Archivo: Main.java

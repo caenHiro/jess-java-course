@@ -1,32 +1,53 @@
 # Semana 9 — Interfaces y Clases Abstractas
 
-> Tiempo estimado: 3–5 horas
-> Al terminar: `bash scripts/push.sh "semana-09 interfaces"`
-
----
-
+> Notas del DOCENTE — incluye explicaciones pedagógicas, puntos clave a enfatizar y señales de alerta.
 
 ---
 
 ## Objetivo de la semana
 
-Al terminar, Al terminar esta semana debes poder:
+Al terminar, Jess debe poder:
 - Explicar con sus palabras qué es una interfaz y para qué sirve
 - Crear una interfaz con `interface` e implementarla con `implements`
 - Implementar múltiples interfaces en una misma clase
 - Crear una clase abstracta con `abstract` y entender por qué no se puede instanciar
 - Distinguir cuándo usar interfaz versus clase abstracta
 
+**Ya sabe:** clases, objetos, herencia (`extends`), polimorfismo, `@Override`, `super()`, `protected`.  
+**No ha visto:** `ArrayList`, excepciones, SQL, genéricos.
 
 ---
 
-## Analogía clave 
+## Analogía clave (énfasis en clase)
 
 > "Una interfaz es como un formulario de requisitos del trabajo. Dice: 'para trabajar aquí necesitas: hablar inglés, saber Excel, tener licencia de manejo'. No dice cómo aprendiste inglés ni cómo conseguiste la licencia — eso lo decides tú. Solo dice QUÉ debes poder hacer."
 
 > "Una clase abstracta es como una receta base de cocina. La receta de 'pan dulce' tiene partes comunes escritas (mezcla la harina, agrega azúcar) pero deja en blanco el paso 'agrega el sabor' — porque cada panadero decide si pone cajeta, chocolate o vainilla."
 
 Conectar con lo que ya sabe: "La semana pasada aprendiste herencia — una clase hijo que extiende una clase padre. Las interfaces son parecidas pero en lugar de heredar CÓDIGO, heredas una OBLIGACIÓN: si usas esta interfaz, TIENES que implementar estos métodos."
+
+---
+
+## Recordatorio — archivos de esta semana
+
+Esta semana hay mas archivos que nunca porque cada interfaz, clase abstracta y clase concreta va en su propio `.java`:
+
+```
+semana-09/
+├── MetodoPago.java        ← interfaz (solo firmas, sin cuerpo)
+├── PagoTarjeta.java       ← implementa MetodoPago
+├── PagoEfectivo.java      ← implementa MetodoPago
+├── Vehiculo.java          ← clase abstracta (abstract class)
+├── Auto.java              ← extends Vehiculo
+├── Camion.java            ← extends Vehiculo
+└── Main.java              ← crea objetos y prueba todo
+```
+
+Las reglas siguen siendo las mismas:
+- Un archivo `.java` = una clase/interfaz publica
+- Nombre del archivo = nombre exacto de la clase/interfaz
+- Desde `Main.java` (clase diferente) → necesitas getters para atributos `private`
+- Dentro de cada clase → accedes a tus propios atributos directamente
 
 ---
 
@@ -468,3 +489,11 @@ public class MainVehiculos {
 | **Total** | **10 pts** |
 
 ---
+
+## Señales de alerta
+
+- Si intenta poner código en la interfaz (llaves `{}` en los métodos): recordar que la interfaz SOLO tiene firmas — el cómo lo decide cada clase que implemente.
+- Si confunde `implements` y `extends`: interfaz usa `implements`, herencia/clase abstracta usa `extends`. Es común mezclarlos al principio.
+- Si intenta instanciar la interfaz (`new MetodoPago()`): explicar con la analogía del formulario — el formulario en sí no hace nada, necesitas a alguien que lo llene.
+- Si intenta instanciar la clase abstracta (`new Vehiculo(...)`): es intencional que no se pueda. Un "vehículo genérico" no existe — necesitas saber si es auto, camión o moto.
+- Si pregunta "¿para qué sirve todo esto si puedo hacer clases normales?": mostrar el ejemplo del array `MetodoPago[]` — puedes agregar un nuevo método de pago en el futuro sin cambiar el código que procesa los pagos. Eso es flexibilidad.

@@ -1,16 +1,12 @@
 # Semana 10 — Excepciones y Colecciones (ArrayList, HashMap)
 
-> Tiempo estimado: 3–5 horas
-> Al terminar: `bash scripts/push.sh "semana-10 colecciones"`
-
----
-
+> Notas del DOCENTE — incluye explicaciones pedagógicas, puntos clave a enfatizar y señales de alerta.
 
 ---
 
 ## Objetivo de la semana
 
-Al terminar, Al terminar esta semana debes poder:
+Al terminar, Jess debe poder:
 - Usar `try/catch/finally` para manejar errores sin que el programa explote
 - Distinguir los tipos de excepción más comunes
 - Lanzar una excepción propia con `throw new`
@@ -18,16 +14,33 @@ Al terminar, Al terminar esta semana debes poder:
 - Usar `HashMap<K, V>` para guardar pares clave-valor
 - Saber cuándo usar cada colección
 
+**Ya sabe:** clases, objetos, herencia, interfaces, clases abstractas, `@Override`, ciclos, `switch`, `Scanner`, arrays.  
+**No ha visto:** SQL, JDBC, genéricos avanzados, `Iterator`, `Stream`.
 
 ---
 
-## Analogía clave 
+## Analogía clave (énfasis en clase)
 
 > "Una excepción es como un accidente en la cocina: puedes estar cocinando tranquilamente y de repente derramar la olla. Si no tienes un plan, el desastre arruina todo (el programa se detiene). Con `try/catch` es como tener una toalla lista: si algo se derrama, la usas, limpias y sigues cocinando."
 
 > "Un `ArrayList` es como una lista del mercado en papel: puedes agregar cosas al final, tachar cosas, y la lista puede crecer o achicarse. Un array normal es como una charola fija de 10 espacios — pones lo que cabe y ya."
 
 > "Un `HashMap` es como tu lista de contactos en el celular: buscas por nombre y encuentras el teléfono. Tienes clave (nombre) → valor (teléfono). Es rapidísimo para buscar por clave."
+
+---
+
+## Nota sobre `static` en los ejemplos de esta semana
+
+Los ejemplos de excepciones y colecciones son programas de practica rapida donde TODO vive en el `main`. Por eso los metodos auxiliares (como `dividir`) son `static` — para que el `main` (que es `static`) los pueda llamar sin crear un objeto.
+
+Esto es diferente a las semanas 7-9 donde las clases tenian atributos y metodos de instancia (sin static). Ambos estilos son validos para contextos distintos:
+
+| Estilo | Cuando usarlo |
+|---|---|
+| Metodos `static` | Utilidades que no necesitan datos propios de un objeto |
+| Metodos de instancia (sin static) | Cuando el metodo necesita acceder a atributos del objeto |
+
+No confundir — esta semana los ejemplos son de utilerías y colecciones, no de modelado de objetos.
 
 ---
 
@@ -490,3 +503,11 @@ public class Agenda {
 **Reto (no penalizar si no lo hace, pero sí dar retroalimentación):** si entregó Agenda con HashMap, revisar que use `containsKey()` antes de `get()`.
 
 ---
+
+## Señales de alerta
+
+- Si el programa explota con `NumberFormatException` aunque tiene `try/catch`: verificar que el `Double.parseDouble()` esté DENTRO del bloque `try`, no antes.
+- Si `remove()` del ArrayList elimina el elemento equivocado: revisar si está usando `remove(int)` (por índice) o `remove(Object)` (por valor). Para listas de String, `remove("texto")` funciona por valor.
+- Si el `nextLine()` después de `nextInt()` se salta: explicar el bug del buffer — `nextInt()` no consume el `\n` al final, entonces el siguiente `nextLine()` lo recoge vacío. Solución: `sc.nextLine()` extra después de cada `nextInt()`.
+- Si se frustra con los genéricos `<String>`: explicar que es solo para decirle al ArrayList qué tipo de dato va a guardar. "El ArrayList de String solo acepta Strings, igual que una caja etiquetada."
+- Si Jess pregunta para qué sirve `finally` si puede poner el código después del catch: explicar con el caso de excepción no capturada — si hay un error que el catch no captura, el código después del catch NO se ejecuta, pero el finally SÍ. Es la única garantía.
