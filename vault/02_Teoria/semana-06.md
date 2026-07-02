@@ -5,7 +5,6 @@
 
 ---
 
-
 ---
 
 ## Objetivo de la semana
@@ -235,7 +234,7 @@ public static double calcularPrecioConDescuento(double precio, double descuento)
 
 ---
 
-## Errores comunes (notas del docente)
+## Errores comunes
 
 1. **Olvidar el `return` en un metodo que no es void** — Java marca error de compilacion.
    - Ejemplo: `public static int sumar(int a, int b) { int resultado = a + b; }` — falta el `return resultado;`
@@ -355,8 +354,6 @@ public class ValidadorContrasena {
     }
 }
 ```
-
-**Punto pedagogico:** notar que usamos `return false` despues del ciclo — si el ciclo termino sin encontrar mayuscula, entonces no hay mayuscula.
 
 ### Ejercicio 3 — Numero primo (reto)
 

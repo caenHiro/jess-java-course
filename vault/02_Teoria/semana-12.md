@@ -5,7 +5,6 @@
 
 ---
 
-
 ---
 
 ## Objetivo de la semana
@@ -227,7 +226,7 @@ public class ProductoDAO {
 
 ---
 
-## Errores comunes (notas del docente)
+## Errores comunes
 
 1. **Crear la tabla hijo antes que la tabla padre** — MySQL lanza error de FK porque intenta referenciar una tabla que no existe. El orden importa: primero las tablas sin FK, luego las que tienen FK.
 

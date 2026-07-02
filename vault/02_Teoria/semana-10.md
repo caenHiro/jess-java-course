@@ -1,7 +1,5 @@
 # Semana 10 — Excepciones y Colecciones (ArrayList, HashMap)
 
-> Notas del DOCENTE — incluye explicaciones pedagógicas, puntos clave a enfatizar y señales de alerta.
-
 ---
 
 ## Objetivo de la semana
@@ -227,7 +225,7 @@ for (String nombre : agenda.keySet()) {
 
 ---
 
-## Errores comunes (notas del docente)
+## Errores comunes
 
 1. **No importar `ArrayList` o `HashMap`** — Java no los encuentra sin el `import`. Error: "cannot find symbol". Solución: agregar `import java.util.ArrayList;` al inicio del archivo.
 

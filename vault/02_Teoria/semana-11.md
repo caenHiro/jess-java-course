@@ -5,7 +5,6 @@
 
 ---
 
-
 ---
 
 ## Objetivo de la semana
@@ -19,7 +18,6 @@ Al terminar, Al terminar esta semana debes poder:
 - Actualizar datos con `UPDATE ... SET ... WHERE`
 - Eliminar datos con `DELETE FROM ... WHERE`
 - Conectar Java a MySQL con JDBC y ejecutar una consulta básica
-
 
 ---
 
@@ -269,11 +267,9 @@ public class ConexionBasica {
 }
 ```
 
-**Nota para el docente:** JDBC es solo para que vea cómo se conecta Java a MySQL conceptualmente. Los ejercicios principales son en SQL puro. JDBC se profundiza en la semana 12 como parte del proyecto final.
-
 ---
 
-## Errores comunes (notas del docente)
+## Errores comunes
 
 1. **`UPDATE` o `DELETE` sin `WHERE`** — el error más peligroso y más común. Insistir MUCHO en esto. En entornos reales puede borrar o modificar miles de registros. Hacer que Jess lo repita: "siempre WHERE en UPDATE y DELETE".
 

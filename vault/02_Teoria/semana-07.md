@@ -1,9 +1,5 @@
 # Semana 7 — Clases y Objetos (POO basico)
 
-> Notas del DOCENTE — incluye explicaciones pedagogicas y puntos clave a enfatizar.
-> ESTA ES LA SEMANA MAS IMPORTANTE DEL CURSO. Dar tiempo extra si es necesario.
-> Si Jess no entiende algo, NO avanzar — esta semana es la base de todo lo que sigue.
-
 ---
 
 ## Objetivo de la semana
@@ -386,7 +382,7 @@ Ambos archivos deben estar en la misma carpeta para que Java pueda encontrarlos.
 
 ---
 
-## Errores comunes (notas del docente)
+## Errores comunes
 
 1. **Poner `static` en los metodos de la clase** — el error conceptual mas frecuente.
    - Ejemplo: `public static void saludar() {...}` dentro de `Persona`.

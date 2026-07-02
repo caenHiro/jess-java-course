@@ -1,7 +1,5 @@
 # Semana 8 — Herencia y Polimorfismo
 
-> Notas del DOCENTE — incluye explicaciones pedagógicas, puntos clave a enfatizar y señales de alerta.
-
 ---
 
 ## Objetivo de la semana
@@ -224,7 +222,7 @@ public class Main {
 
 ---
 
-## Errores comunes (notas del docente)
+## Errores comunes
 
 1. **Olvidar `super()` en el constructor hijo** — Java lanza error de compilación porque el padre no se inicializa. Explicar: el hijo SIEMPRE necesita que el padre se construya primero.
 

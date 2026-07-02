@@ -5,7 +5,6 @@
 
 ---
 
-
 ---
 
 ## Objetivo de la semana
@@ -216,7 +215,7 @@ if (vocales.indexOf(letra) >= 0) {
 
 ---
 
-## Errores comunes (notas del docente)
+## Errores comunes
 
 1. **ArrayIndexOutOfBoundsException** — acceder a un indice que no existe.
    - Ejemplo: array de 5 elementos, intentar `calificaciones[5]`.
@@ -271,8 +270,6 @@ public class FrutasReversa {
     }
 }
 ```
-
-**Punto pedagogico:** enfatizar que `frutas.length - 1` es el ultimo indice (4 para un array de 5). Y que `i >= 0` es la condicion para no pasarnos del inicio.
 
 ### Ejercicio 2 — Contar vocales
 
@@ -348,7 +345,5 @@ public class Promedio {
     }
 }
 ```
-
-**Punto pedagogico:** la tecnica de inicializar max y min con el primer elemento del array (en lugar de 0 o un numero muy grande) es la forma correcta y segura.
 
 ---

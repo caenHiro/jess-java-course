@@ -13,8 +13,12 @@ Repositorio de aprendizaje Java — 90 días desde cero hasta Spring Boot.
 │   ├── 04_Entrevista/          # Preparación para entrevistas técnicas
 │   │   ├── 01_Preguntas_Java.md            # Q&A Java — POO, colecciones, Spring
 │   │   ├── 02_Vacante_INE_Ing_Desarrollo.md # Vacante INE — checklist + temario
-│   │   ├── 03_Competencias_Tecnicas_Vacantes.md # Guía de herramientas que piden las vacantes
-│   │   └── 04_Perfil_Data_Engineer.md      # Perfil Data Engineer — Spark, Snowflake, DWH
+│   │   ├── 03_Competencias_Tecnicas_Vacantes.md # Herramientas que piden las vacantes Java
+│   │   ├── 04_Perfil_Data_Engineer.md      # Perfil Data Engineer — Spark, Snowflake, DWH
+│   │   ├── 05_Examen_SQL_Lideres.md        # 🔴 URGENTE — Examen SQL INE con práctica
+│   │   ├── 06_Examen_Java_JBoss.md         # 🔴 URGENTE — Examen Java/JBoss INE con práctica
+│   │   ├── 07_Historia_INE.md              # 🔴 URGENTE — Historia y estructura del INE
+│   │   └── 08_Guia_Preparacion_Entrevistas.md # Plan completo por tipo de entrevista
 │   └── 04_Notas_Personales/    # Tus notas personales y progreso
 └── codigo/                      # Tu código Java
     ├── semana-01/

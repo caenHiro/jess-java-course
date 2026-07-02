@@ -1,7 +1,5 @@
 # Semana 9 — Interfaces y Clases Abstractas
 
-> Notas del DOCENTE — incluye explicaciones pedagógicas, puntos clave a enfatizar y señales de alerta.
-
 ---
 
 ## Objetivo de la semana
@@ -237,7 +235,7 @@ public class Moto extends Vehiculo {
 
 ---
 
-## Errores comunes (notas del docente)
+## Errores comunes
 
 1. **Olvidar implementar algún método de la interfaz** — Java lanza error "clase no abstracta no implementa el método X". Revisar que estén TODOS los métodos definidos en la interfaz.
 
