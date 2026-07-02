@@ -19,8 +19,6 @@ public class Main2 {
         a.setPrecio(-22);
         System.err.println("Precio actualizado:");
         a.mostrarInfo();
-
-
     }
 
 }

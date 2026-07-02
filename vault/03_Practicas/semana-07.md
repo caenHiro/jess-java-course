@@ -245,7 +245,137 @@ Crea la clase `CuentaBancaria` con:
 Crea 2 cuentas en `BancoMain.java` y simula algunas transacciones.
 
 _Tu código:_
+```java
+public class CuentaBancaria {
 
+//Atributos
+
+    private String titular;
+
+    private double  saldo;
+
+    private  String numeroCuenta;
+
+  
+
+    public CuentaBancaria(String titular, double  saldoInicial, String numeroCuenta ){
+
+        this.titular = titular;
+
+        this.saldo = saldoInicial >= 0 ? saldoInicial : 0 ;
+
+        this.numeroCuenta = numeroCuenta;
+
+    }
+
+    //Métodos: `depositar(double)`, `retirar(double)`, `getSaldo()`, `mostrarResumen()`
+
+  
+
+    public void depositar(double cantidad){
+
+        if(cantidad > 0) {
+
+            saldo += cantidad;
+
+            System.out.println("Ustede " + titular + " deposito: $" + cantidad + " Su saldo actual es: $" + saldo);
+
+        }
+
+  
+
+    }
+
+    public void retirar(double cantidad){
+
+        if (cantidad > saldo) {
+
+            System.out.println( titular +" su saldo es insuficiente, su saldo es: $ " + saldo);
+
+        } else {
+
+            saldo -= cantidad;
+
+            System.err.println("Ustede " + titular +" retiro: $" + cantidad + " Su alsdo actual es de: $" + saldo);
+
+        }
+
+    }
+
+  
+
+    public double getSaldo(){
+
+        return saldo;
+
+    }
+
+    public void muestraResumen(){
+
+        System.out.println("Cuenta: " + numeroCuenta +
+
+                            " | Titular: " + titular +
+
+                            " | Saldo: " + saldo);
+
+    }
+
+}
+
+
+
+
+
+
+public class BancoMain {
+
+    public static void main(String[] args) {
+
+        CuentaBancaria cuentaJess = new CuentaBancaria("Jessica Chino", 500.0, "BMX-001");
+
+        CuentaBancaria cuentaCarlos = new CuentaBancaria("Carlos Escalona", 1000.0, "BMX-002");
+
+        CuentaBancaria cuenaTifon = new CuentaBancaria("Tifon Esc", 2000.0, "BMX-003");
+
+  
+
+        System.out.println("=== Estado inicial ===");
+
+        cuentaJess.muestraResumen();
+
+        cuentaCarlos.muestraResumen();
+
+        cuenaTifon.muestraResumen();
+
+        System.out.println("\n=== Transacciones ===");
+
+        cuentaJess.depositar(200.0);
+
+        cuentaCarlos.retirar(300);
+
+        cuenaTifon.depositar(500);
+
+        cuentaJess.retirar(3000);
+
+  
+
+        System.out.println("\n=== Estado final ===");
+
+        cuentaJess.muestraResumen();
+
+        cuentaCarlos.muestraResumen();
+
+        cuenaTifon.muestraResumen();
+
+  
+
+    }
+
+  
+
+}
+
+```
 ---
 
 ## Retroalimentacion — Semana 7
