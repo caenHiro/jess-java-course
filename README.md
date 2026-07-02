@@ -5,13 +5,18 @@ Repositorio de aprendizaje Java — 90 días desde cero hasta Spring Boot.
 ## Estructura
 
 ```
-├── vault/                    # Notas en Obsidian
-│   ├── 00_Guia_Uso.md       # Empieza aquí
-│   ├── 01_Instalacion/      # Guías de instalación (Java, VS Code, Git, Docker, Maven, Spring)
-│   ├── 02_Teoria/           # Teoría semanal
-│   ├── 03_Practicas/        # Ejercicios (tú los resuelves aquí)
-│   └── 04_Notas_Personales/ # Tus notas personales y progreso
-└── codigo/                   # Tu código Java
+├── vault/                       # Notas en Obsidian
+│   ├── 00_Guia_Uso.md          # Empieza aquí
+│   ├── 01_Instalacion/         # Guías de instalación (Java, VS Code, Git, Docker, Maven, Spring)
+│   ├── 02_Teoria/              # Teoría semanal
+│   ├── 03_Practicas/           # Ejercicios (tú los resuelves aquí)
+│   ├── 04_Entrevista/          # Preparación para entrevistas técnicas
+│   │   ├── 01_Preguntas_Java.md            # Q&A Java — POO, colecciones, Spring
+│   │   ├── 02_Vacante_INE_Ing_Desarrollo.md # Vacante INE — checklist + temario
+│   │   ├── 03_Competencias_Tecnicas_Vacantes.md # Guía de herramientas que piden las vacantes
+│   │   └── 04_Perfil_Data_Engineer.md      # Perfil Data Engineer — Spark, Snowflake, DWH
+│   └── 04_Notas_Personales/    # Tus notas personales y progreso
+└── codigo/                      # Tu código Java
     ├── semana-01/
     ├── semana-02/
     └── ...
