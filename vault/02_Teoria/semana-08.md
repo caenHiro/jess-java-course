@@ -211,11 +211,11 @@ public class Main {
 
 ### 8.5 ¿Cuándo usar herencia?
 
-| Situación | ¿Herencia? |
-|-----------|-----------|
-| Perro **es un** Animal | Si — `extends Animal` |
-| Círculo **es una** Figura | Si — `extends Figura` |
-| Auto **tiene un** motor | No — Motor debe ser atributo |
+| Situación                       | ¿Herencia?                       |
+| ------------------------------- | -------------------------------- |
+| Perro **es un** Animal          | Si — `extends Animal`            |
+| Círculo **es una** Figura       | Si — `extends Figura`            |
+| Auto **tiene un** motor         | No — Motor debe ser atributo     |
 | Persona **tiene una** dirección | No — Direccion debe ser atributo |
 
 **Regla:** si tienes que copiar código de una clase a otra, pregúntate si hay una relación "ES UN". Si sí, usa herencia.
