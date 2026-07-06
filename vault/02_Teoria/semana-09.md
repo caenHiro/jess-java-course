@@ -280,7 +280,7 @@ public class PagoTarjeta implements MetodoPago {
     @Override
     public boolean pagar(double cantidad) {
         // Simulamos: la tarjeta siempre acepta (en la vida real habría validación)
-        System.out.println("Tarjeta " + numeroTarjeta + ": pagando $" + cantidad);
+        System.out.println("Tarjeta " + numeroTarjeta);
         return true;   // pago exitoso
     }
 
