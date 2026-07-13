@@ -33,9 +33,9 @@ Los ejemplos de excepciones y colecciones son programas de practica rapida donde
 
 Esto es diferente a las semanas 7-9 donde las clases tenian atributos y metodos de instancia (sin static). Ambos estilos son validos para contextos distintos:
 
-| Estilo | Cuando usarlo |
-|---|---|
-| Metodos `static` | Utilidades que no necesitan datos propios de un objeto |
+| Estilo                            | Cuando usarlo                                            |
+| --------------------------------- | -------------------------------------------------------- |
+| Metodos `static`                  | Utilidades que no necesitan datos propios de un objeto   |
 | Metodos de instancia (sin static) | Cuando el metodo necesita acceder a atributos del objeto |
 
 No confundir — esta semana los ejemplos son de utilerías y colecciones, no de modelado de objetos.
@@ -441,8 +441,7 @@ public class Agenda {
                     if (contactos.containsKey(busqueda)) {
                         // get() devuelve el valor asociado a esa clave
                         System.out.println(busqueda + ": " + contactos.get(busqueda));
-                    } else {
-                        System.out.println("Contacto no encontrado.");
+                    1System.out.println("Contacto no encontrado.");
                     }
                     break;
 
