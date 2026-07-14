@@ -111,6 +111,14 @@ Archivo: `codigo/semana-11/03_actualizar_eliminar.sql`
 
 _Tu código:_
 
+```sql
+UPDATE estudiantes SET promedio = 9.99 WHERE id = 1;
+UPDATE estudiantes e set carrera = 'Ingeniería Industrial' WHERE id = 14;
+UPDATE estudiantes e set carrera = 'Ingeniería Industrial' WHERE id = 10;
+DELETE FROM estudiantes WHERE id = 16;
+SELECT * FROM estudiantes;
+```
+
 ---
 
 ## Reflexión
@@ -118,11 +126,12 @@ _Tu código:_
 **¿Por qué es importante el `WHERE` en UPDATE y DELETE?**
 
 _Tu respuesta:_
-
+Para especificar que registro quiere que se actualice o borre. 
 **¿Qué hace `AUTO_INCREMENT`?**
 
 _Tu respuesta:_
-
+genera el numero consecutivo del ultimo que esta. 
 **¿Cuál es la diferencia entre `=` y `LIKE` en el WHERE?**
 
 _Tu respuesta:_
+el = dice que sea exactamente igual a lo que pongas y el like dice que tenga lo que pongas.
