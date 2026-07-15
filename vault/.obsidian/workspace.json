@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_Practicas/semana-11.md",
+                "file": "03_Practicas/semana-12.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "semana-11"
+              "title": "semana-12"
             }
           }
         ]
@@ -182,9 +182,10 @@
   },
   "active": "3f0ea2383bdcab3d",
   "lastOpenFiles": [
-    "02_Teoria/semana-11.md",
-    "03_Practicas/semana-11.md",
     "02_Teoria/semana-12.md",
+    "03_Practicas/semana-12.md",
+    "03_Practicas/semana-11.md",
+    "02_Teoria/semana-11.md",
     "03_Practicas/semana-10.md",
     "02_Teoria/semana-10.md",
     "03_Practicas/semana-09.md",
