@@ -72,6 +72,8 @@ docker --version
 
 ## Levantar PostgreSQL con Docker
 
+> Atajo: este repo ya trae un `docker-compose.yml` en la raíz con un servicio `db` listo (usuario `jess`/`jess123`, base `curso_java`, puerto 5434) — `docker compose up -d db` y listo. Lo de abajo es para entender qué hace ese compose por dentro.
+
 Una vez que Docker esté instalado, crear una base de datos PostgreSQL es un solo comando:
 
 ```bash
@@ -80,7 +82,7 @@ docker run -d \
   -e POSTGRES_USER=alumno \
   -e POSTGRES_PASSWORD=alumno123 \
   -e POSTGRES_DB=mi_escuela \
-  -p 5432:5432 \
+  -p 5434:5432 \
   postgres:16
 ```
 
@@ -89,7 +91,7 @@ Qué hace cada parte:
 - `-e POSTGRES_USER=alumno` — usuario de la BD
 - `-e POSTGRES_PASSWORD=alumno123` — contraseña
 - `-e POSTGRES_DB=mi_escuela` — nombre de la base de datos
-- `-p 5432:5432` — expone el puerto 5432 (para conectarte desde tu computadora)
+- `-p 5434:5432` — expone el puerto 5434 de tu máquina (mapeado al 5432 interno del contenedor). Se usa 5434 en vez del 5432 estándar porque en este workspace el 5432 ya lo ocupa el Postgres del Portal Personal — si en tu máquina el 5432 está libre, puedes usarlo sin problema (`-p 5432:5432`)
 - `postgres:16` — imagen de PostgreSQL versión 16
 
 ---
@@ -137,7 +139,7 @@ docker exec -it mi-postgres psql -U alumno -d mi_escuela
 2. Nueva conexión → **PostgreSQL**
 3. Configura:
    - **Host:** localhost
-   - **Port:** 5432
+   - **Port:** 5434 (o 5432 si no usaste el mapeo alterno)
    - **Database:** mi_escuela
    - **Username:** alumno
    - **Password:** alumno123
@@ -177,7 +179,7 @@ docker run -d \
   -e POSTGRES_USER=alumno \
   -e POSTGRES_PASSWORD=alumno123 \
   -e POSTGRES_DB=mi_escuela \
-  -p 5432:5432 \
+  -p 5434:5432 \
   -v postgres_data:/var/lib/postgresql/data \
   postgres:16
 ```
