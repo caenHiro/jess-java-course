@@ -50,11 +50,121 @@ El INE es un **órgano constitucional autónomo** — no pertenece al gobierno, 
 - También participan representantes de los partidos políticos (sin voto)
 - El Secretario Ejecutivo coordina la administración
 
-### Áreas principales
-- **DERFE** — Dirección Ejecutiva del Registro Federal de Electores (padrón electoral, credencial de elector)
-- **DEPPP** — Dirección Ejecutiva de Prerrogativas y Partidos Políticos
-- **DECP** — Dirección Ejecutiva de Capacitación Electoral y Educación Cívica
-- **UTCE / Unidad Técnica** — tecnología y sistemas (donde trabajan los desarrolladores)
+### Direcciones Ejecutivas (6) — detalle oficial de atribuciones
+
+- **DERFE** — Dirección Ejecutiva del Registro Federal de Electores.
+  Forma y actualiza el Padrón Electoral y el Listado Nominal. Expide la credencial para votar. Mantiene el catálogo general de electores.
+
+- **DEPPP** — Dirección Ejecutiva de Prerrogativas y Partidos Políticos.
+  Garantiza derechos, prerrogativas y obligaciones de partidos políticos, agrupaciones políticas y candidaturas independientes: financiamiento público, franquicias postales/telegráficas y acceso a radio y TV. Recibe y tramita las solicitudes de registro de nuevos partidos/agrupaciones. Ministra el financiamiento público a los partidos.
+
+- **DEOE** — Dirección Ejecutiva de Organización Electoral.
+  Planea, dirige y supervisa los programas de organización electoral a través de los Vocales Ejecutivos en juntas locales/distritales. Elabora y distribuye la documentación y material electoral (boletas, actas). Supervisa que la instalación de casillas cumpla la normativa. Integra los expedientes para los cómputos del Consejo General.
+
+- **DESPEN** — Dirección Ejecutiva del Servicio Profesional Electoral Nacional.
+  Organiza y opera el Servicio Profesional Electoral Nacional (SPEN) — el cuerpo de funcionarios de carrera del INE y de los OPLE — mediante reclutamiento, selección, capacitación, evaluación, promoción y permanencia. Mantiene el archivo/base de datos del personal del SPEN.
+
+- **DECEyEC** — Dirección Ejecutiva de Capacitación Electoral y Educación Cívica.
+  Capacita a los funcionarios de casilla (sorteo, capacitación, designación). Diseña y ejecuta programas de educación cívica y promoción de la cultura democrática entre la ciudadanía.
+
+- **DEA** — Dirección Ejecutiva de Administración.
+  Organiza, dirige y controla los recursos materiales, financieros, humanos y los servicios generales del Instituto completo (no solo de la UTSI). Formula el anteproyecto anual de presupuesto del INE y opera los sistemas de control presupuestal.
+
+### Unidades Técnicas (dependen directamente de la Secretaría Ejecutiva, no de una Dirección Ejecutiva)
+- **UTSI** — Unidad Técnica de Servicios de Informática — **aquí trabajan los desarrolladores** (ver detalle abajo)
+- **DJ** — Dirección Jurídica
+- **UTF** — Unidad Técnica de Fiscalización (audita el dinero de los partidos)
+- **UTCE** — Unidad Técnica de lo Contencioso Electoral
+- **UTVOPL** — Unidad Técnica de Vinculación con los Organismos Públicos Locales (OPLEs estatales)
+- **UTIGyND** — Unidad Técnica de Igualdad de Género y No Discriminación
+- **UTTPDP** — Unidad Técnica de Transparencia y Protección de Datos Personales
+- **CNCS** — Coordinación Nacional de Comunicación Social
+- Coordinación de Asuntos Internacionales
+
+---
+
+## UTSI — Unidad Técnica de Servicios de Informática (detalle para el examen técnico)
+
+> Fuente: *Manual de Organización Específico de la UTSI*, INE, noviembre 2019 (documento oficial).
+> Esta es el área más relevante si el puesto es de desarrollo — **el PREP se desarrolla y opera aquí**.
+
+**Objetivo de la UTSI:** coordinar la aplicación y administración de las Tecnologías de Información y Comunicaciones del Instituto, mediante la implementación y soporte de sistemas y servicios informáticos, para innovar, optimizar y estandarizar los procesos del INE. Entre sus funciones explícitas está **proponer, implementar y operar los mecanismos e infraestructura del Programa de Resultados Electorales Preliminares (PREP)**.
+
+Creada en 1998. Reestructurada varias veces (2002, 2003, 2007, 2009, 2013, 2016-2019). Última reestructuración vigente desde 2019.
+
+### Estructura orgánica de la UTSI
+
+```
+Unidad Técnica de Servicios de Informática (UTSI)
+├── Secretaría Particular
+├── Coordinación Administrativa
+│   ├── Departamento de Recursos Humanos
+│   ├── Departamento de Recursos Financieros
+│   └── Departamento de Recursos Materiales
+├── Dirección de Sistemas                              ← desarrollo de software
+│   ├── Subdirección de Sistemas de Organización Electoral
+│   │   ├── Depto. de Análisis, Diseño y Pruebas de Sistemas de Organización Electoral
+│   │   └── Depto. de Construcción de Sistemas de Organización Electoral
+│   ├── Subdirección de Sistemas de Capacitación Electoral
+│   │   ├── Depto. de Análisis, Diseño y Pruebas de Sistemas de Capacitación Electoral
+│   │   └── Depto. de Construcción de Sistemas de Capacitación Electoral
+│   ├── Subdirección de Sistemas de Fiscalización
+│   │   ├── Depto. de Análisis, Diseño y Pruebas de Sistemas de Fiscalización
+│   │   └── Depto. de Construcción de Sistemas de Fiscalización
+│   └── Subdirección de Sistemas Institucionales
+│       ├── Depto. de Análisis, Diseño y Pruebas de Sistemas Institucionales
+│       └── Depto. de Construcción de Sistemas Institucionales
+├── Dirección de Operaciones                            ← infraestructura, redes, cómputo
+│   ├── Subdirección de Administración de Sistemas
+│   │   ├── Depto. de Procesamiento y Almacenamiento
+│   │   ├── Depto. de Bases de Datos
+│   │   └── Depto. de Aplicaciones
+│   ├── Subdirección de Comunicaciones
+│   │   ├── Depto. de Operación de Redes
+│   │   ├── Depto. de Integración de Redes
+│   │   └── Depto. de Servicios de Voz y Video
+│   └── Subdirección de Soporte Técnico y Administración de Servicios de Cómputo
+│       ├── Depto. de Soporte Técnico y Admin. de Servicios de Colaboración
+│       ├── Depto. de Administración de Servicios de Cómputo
+│       └── Depto. de Infraestructura Eléctrica y Soporte de Centro de Datos
+├── Dirección de Proyectos e Innovación Tecnológica      ← arquitectura, gestión de proyectos TI
+│   ├── Subdirección de Administración de Proyectos de TIC
+│   │   ├── Depto. de Gestión de Proyectos de Software
+│   │   └── Depto. de Gestión de Proyectos de Infraestructura de TIC
+│   ├── Subdirección de Análisis y Evaluación de Soluciones Tecnológicas
+│   │   ├── Depto. de Dictaminación de Soluciones Tecnológicas
+│   │   ├── Depto. de Evaluación de Soluciones Tecnológicas
+│   │   └── Depto. de Innovación Tecnológica
+│   ├── Subdirección de Arquitectura Tecnológica
+│   │   ├── Depto. de Arquitectura de Software
+│   │   ├── Depto. de Arquitectura de Información
+│   │   └── Depto. de Interfaz de Usuario
+│   └── Subdirección de Implementación de Soluciones Tecnológicas
+│       ├── Depto. de Investigación
+│       └── Depto. de Implementación de Nuevas Tecnologías
+├── Dirección de Seguridad y Control Informático         ← seguridad, auditoría de TI
+│   ├── Subdirección de Seguridad Informática
+│   │   ├── Depto. de Análisis de Riesgos
+│   │   └── Depto. de Auditoría Informática
+│   └── Subdirección de Procesos de TIC
+│       ├── Depto. de Implementación de Procesos de TIC
+│       └── Depto. de Evaluación de Procesos de TIC
+└── Coordinación de Atención a Usuarios
+    └── Depto. de Atención y Seguimiento
+```
+
+### Qué hace cada Dirección (resumen para examen)
+
+| Dirección | Qué hace |
+|---|---|
+| **Dirección de Sistemas** | Dirige el desarrollo, control de calidad, capacitación y mantenimiento de los Sistemas de Información del INE. Se organiza por dominio de negocio (Organización Electoral, Capacitación Electoral, Fiscalización, Institucionales) — cada Subdirección tiene su propio ciclo análisis→diseño→pruebas y construcción. |
+| **Dirección de Operaciones** | Administra la infraestructura que corre los sistemas: bases de datos, procesamiento, redes, comunicaciones de voz/video, soporte técnico y centro de datos. |
+| **Dirección de Proyectos e Innovación Tecnológica** | Gestiona el portafolio de proyectos de TI, evalúa y dictamina soluciones tecnológicas nuevas, define la arquitectura de software/información/UI, e investiga tecnologías emergentes. |
+| **Dirección de Seguridad y Control Informático** | Seguridad informática (análisis de riesgos, auditoría) y gobierno de procesos de TIC. |
+| **Coordinación Administrativa** | Recursos humanos, financieros y materiales — solo de la UTSI, no de todo el INE (eso es DEA). |
+| **Coordinación de Atención a Usuarios** | Mesa de ayuda / soporte a usuarios internos. |
+
+**Dato clave para el examen:** el desarrollo de sistemas se organiza por dominio (no hay una "Subdirección de PREP" separada) — el PREP como programa cae bajo las funciones institucionales de la UTSI en su conjunto, coordinado típicamente desde Dirección de Sistemas + Dirección de Operaciones para la infraestructura de captura/difusión la noche de la elección.
 
 ---
 
@@ -126,6 +236,16 @@ Cubre la tabla y responde de memoria:
 8. ¿Qué significa DERFE? ___
 9. ¿El PREP da los resultados oficiales? ___
 10. ¿Cuántas entidades federativas hay en México? ___
+11. ¿Cómo se llama la unidad donde trabajan los desarrolladores de software del INE? ___
+12. ¿De qué Dirección de la UTSI depende el desarrollo de sistemas? ___
+13. ¿Cuáles son las 4 Direcciones que integran la UTSI (además de las 2 Coordinaciones)? ___
+14. ¿Qué Subdirección de la Dirección de Sistemas maneja los sistemas relacionados con el dinero de los partidos? ___
+15. ¿Qué diferencia hay entre la Dirección de Sistemas y la Dirección de Operaciones dentro de la UTSI? ___
+16. ¿Qué Dirección Ejecutiva expide la credencial para votar y forma el Padrón Electoral? ___
+17. ¿Qué Dirección Ejecutiva ministra el financiamiento público a los partidos políticos? ___
+18. ¿Qué Dirección Ejecutiva organiza al personal de carrera del INE (SPEN)? ___
+19. ¿Qué Dirección Ejecutiva elabora y distribuye la documentación electoral (boletas, actas) y supervisa la instalación de casillas? ___
+20. ¿Qué diferencia hay entre la Dirección Ejecutiva de Administración (DEA) y la Coordinación Administrativa de la UTSI? ___
 
 ---
 
@@ -135,3 +255,11 @@ Cubre la tabla y responde de memoria:
 - El **TEPJF** (Tribunal Electoral del Poder Judicial de la Federación) resuelve impugnaciones y valida los resultados — es diferente al INE
 - La credencial de elector la emite el INE (antes la emitía el IFE) — es la identificación oficial más aceptada en México
 - Los partidos políticos reciben dinero público llamado **financiamiento público** — el INE fiscaliza su uso
+
+---
+
+## Fuentes
+
+- Manual de Organización Específico de la Unidad Técnica de Servicios de Informática (UTSI), INE, noviembre 2019 — [repositoriodocumental.ine.mx](https://repositoriodocumental.ine.mx/xmlui/bitstream/handle/123456789/113159/JGEor201911-15-ap-3-3-4-a1.pdf)
+- Estructura Orgánica INE — [ine.mx/estructura-ine](https://www.ine.mx/estructura-ine/)
+- Atribuciones por Dirección Ejecutiva — páginas oficiales `ine.mx/atribuciones-*`
