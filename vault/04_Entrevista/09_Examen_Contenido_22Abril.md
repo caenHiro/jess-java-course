@@ -101,3 +101,5 @@ tipo: guia_examen
 - `Platica_22_abril_examen.pdf` — grabación/notas de la plática original
 - [[06_Examen_Java_JBoss_Microservicios]] — guía técnica detallada
 - [[05_Examen_SQL_Lideres]] — SQL específico para líderes
+- [[10_SIGETIC_HU]] — SIGETIC completo: roles, objetivos, paquetes de trabajo, HUs, ADS
+- [[11_Pruebas_Unitarias_Java]] — pruebas unitarias con JUnit 5, contexto SIGETIC
